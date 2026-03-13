@@ -1,6 +1,6 @@
 # GPS 座標顯示器
 
-<img width="858" height="1907" alt="image" src="https://github.com/user-attachments/assets/470702c7-a21c-40ef-8ffc-50227059b60d" />
+<img width="525" height="455" alt="image" src="https://github.com/user-attachments/assets/09f33c11-d4da-4031-916a-7b36b1050bce" />
 
 
 即時顯示 GPS 座標的 Godot 2D 應用，使用 [PraxisMapper GodotGPSPlugin](https://github.com/PraxisMapper/GodotGPSPlugin)。
