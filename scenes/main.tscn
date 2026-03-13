@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://bqx5m7k2w8n4p"]
+
+[ext_resource type="Script" uid="uid://cqbspruxx2rei" path="res://scripts/main.gd" id="1_main"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.09, 0.09, 0.12, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.6, 0.9, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 4
+shadow_offset = Vector2(0, 2)
+
+[node name="Main" type="Node2D" unique_id=91445523]
+script = ExtResource("1_main")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=839381757]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=72326640]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.06, 0.08, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1210842927]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -280.0
+offset_right = 160.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=717485739]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "📍 GPS 即時座標"
+horizontal_alignment = 1
+
+[node name="PermissionButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1908328225]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.2, 0.25, 1)
+theme_override_colors/font_hover_color = Color(0.35, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "啟用 GPS 定位"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/VBoxContainer" unique_id=1088992356]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer/PanelContainer" unique_id=1965064750]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="DataVBox" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/MarginContainer" unique_id=486629191]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="LatLabel" type="Label" parent="CanvasLayer/VBoxContainer/PanelContainer/MarginContainer/DataVBox" unique_id=1310931003]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "緯度: --"
+
+[node name="LonLabel" type="Label" parent="CanvasLayer/VBoxContainer/PanelContainer/MarginContainer/DataVBox" unique_id=133479932]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "經度: --"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/VBoxContainer/PanelContainer/MarginContainer/DataVBox" unique_id=1517402885]
+layout_mode = 2
+
+[node name="AccuracyLabel" type="Label" parent="CanvasLayer/VBoxContainer/PanelContainer/MarginContainer/DataVBox" unique_id=1286428079]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 14
+text = "精確度: -- m"
+
+[node name="AltLabel" type="Label" parent="CanvasLayer/VBoxContainer/PanelContainer/MarginContainer/DataVBox" unique_id=200614517]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 14
+text = "海拔: -- m"
+
+[node name="SpeedLabel" type="Label" parent="CanvasLayer/VBoxContainer/PanelContainer/MarginContainer/DataVBox" unique_id=1073376492]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 14
+text = "速度: -- km/h"
+
+[node name="BearingLabel" type="Label" parent="CanvasLayer/VBoxContainer/PanelContainer/MarginContainer/DataVBox" unique_id=969052108]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 14
+text = "方位: -- °"
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1271805897]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.65, 1)
+theme_override_font_sizes/font_size = 12
+text = "點擊上方按鈕啟用 GPS（需在 Android 裝置上執行）"
+horizontal_alignment = 1
+autowrap_mode = 2
